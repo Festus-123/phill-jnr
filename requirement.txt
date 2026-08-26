@@ -1,0 +1,82 @@
+# Project Brief: Premium Minimalist CAD Specialist Portfolio (Single-Page + Project Modal/Slug)
+
+## Executive Summary
+Build a premium, dark-themed, highly polished single-page portfolio for a **3D Structural and CAD Specialist** with 6 years of experience. The site must be built using Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui components, and GSAP for buttery-smooth animations. It should feature a sleek architectural dark mode aesthetic with subtle glowing gradients, bold modern typography, and clean visual hierarchy.
+
+---
+
+## Technical Stack & Dependencies
+- **Framework:** Next.js (App Router, TypeScript)
+- **Styling:** Tailwind CSS, shadcn/ui component primitive libraries
+- **Animations:** GSAP + `@gsap/react` + `ScrollTrigger` for scroll-driven animations and reveal triggers
+- **Icons:** `lucide-react`
+- **Typography:** `next/font/google` using **Syne** (Bold Headings) paired with **Plus Jakarta Sans** (Clean Body Text)
+- **Theme:** Strict Dark Theme (`bg-neutral-950` base, subtle ambient neon-cyan/electric-slate gradients, glassmorphism borders `border-white/10`)
+
+---
+
+## Media & Assets Usage
+- **Images:** Strictly utilize the existing 3 local images located in `/public`:
+  1. `/public/image1.jpg` (or webp/png equivalent present in public)
+  2. `/public/image2.jpg`
+  3. `/public/image3.jpg`
+- Use these images across the Hero background/cards, Project grid thumbnails, and Project Detail views. Ensure `<Image>` components from `next/image` are optimized with proper aspect ratios (`aspect-[16/9]` or `aspect-[4/3]`).
+
+---
+
+## Page Structure & Sections (Single Page Layout)
+
+### 1. Header / Navigation
+- Minimalist sticky blur glassmorphism header (`backdrop-blur-md bg-neutral-950/70`).
+- Brand Logo / Name (Bold Syne font).
+- Quick anchor link navigation: `#hero`, `#about`, `#works`, `#skills`, `#contact`.
+
+### 2. Hero Section (`#hero`)
+- **Headline:** Bold, high-impact typography showcasing structural precision (e.g., *"Precision Engineering in 3D Space"*).
+- **Subheadline:** *"3D Structural & CAD Specialist bridging architectural concepts and real-world execution."*
+- **Call-To-Action:** Dual buttons ("View Selected Works", "Get in Touch") using shadcn/ui `Button` components.
+- **Visual:** Smooth GSAP stagger entry animation on text load, backed by a subtle radial ambient gradient background.
+
+### 3. About Section (`#about`)
+- **Experience Highlight:** Badge showcasing **"6+ Years of Structural CAD Excellence"**.
+- **Punchy Bio (3 Sentences):**
+  > "Specializing in high-precision 3D structural design, parametric modeling, and architectural drafting. With over 6 years of experience transforming complex technical specifications into flawless execution models, I engineer solutions where aesthetic vision meets structural integrity. From high-rise skyscrapers to complex civil infrastructure, precision is the baseline."
+
+### 4. Selected Works / Projects (`#works`)
+Render 3 feature project cards utilizing the images in `/public`:
+1. **Modern Sports Arena & Stadium Complex** (Featured image 1)
+   - *Scope:* Structural steel framework drafting, load distribution modeling, and roof truss geometry.
+2. **Iconic Shanghai Skyscraper Tower** (Featured image 2)
+   - *Scope:* High-rise curtain wall structural detailing, core shaft 3D coordination, and seismic parametric design.
+3. **Massive Suspension Bridge Infrastructure** (Featured image 3)
+   - *Scope:* Cable-stayed structural assembly, concrete pier foundation modeling, and civil BIM coordination.
+
+**Interaction & Detail View (Slug / Modal):**
+- Clicking a project thumbnail opens a dynamic, full-detail view (either via Next.js dynamic parallel route `/works/[slug]` modal or a fluid inline detail drawer) showcasing extended CAD specifications, tool badges, and full-resolution image view.
+
+### 5. Skillset & Tools (`#skills`)
+Minimalist grid featuring tool badges and core competency tags with subtle hover states:
+- **Primary Software:** AutoCAD, Revit, Fusion 360, SolidWorks, SketchUp, Autodesk Inventor.
+- **Core Competencies:** Structural Drafting, 3D Parametric Modeling, BIM Coordination, Technical Documentation, FEA Prep, Structural Steel Detailing.
+
+### 6. Contact Section (`#contact`)
+- **Form:** Built with shadcn/ui `Input`, `Textarea`, and `Button` components.
+- **Fields:** Name, Email, Project Type (Dropdown/Select), Message.
+- **Subtle Touches:** Toast notification trigger upon form submission using `sonner` / shadcn toast.
+
+---
+
+## Animation Guidelines (GSAP)
+- **ScrollTriggers:** Use GSAP `ScrollTrigger` to apply subtle fade-up and scale effects (`opacity: 0, y: 30`) as sections enter the viewport.
+- **Hover Effects:** Smooth transition for cards and project images (subtle zoom scale `1.03` on image wrapper on hover).
+- **Performance:** Clean up GSAP contexts properly using `useGSAP()` hook to ensure zero memory leaks.
+
+---
+
+## Deliverables Checklist
+- [ ] Working Next.js App Router codebase in TypeScript.
+- [ ] Configured `next/font/google` with **Syne** and **Plus Jakarta Sans**.
+- [ ] Integrated shadcn/ui UI components (Buttons, Cards, Inputs, Select, Dialog/Modal).
+- [ ] Full single-page experience with smooth section scrolling.
+- [ ] Integrated `/works/[slug]` project detail modal view.
+- [ ] Fully responsive mobile-to-desktop design layout.
