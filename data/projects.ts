@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
     slug: "modern-sports-arena",
     title: "Modern Sports Arena & Stadium Complex",
     category: "Structural Steel & Truss Geometry",
-    image: "/site-plan.jpg",
+    image: "/stadium.jpg",
     scope: [
       "Structural steel framework drafting",
       "Load distribution modeling",
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     slug: "suspension-bridge-infrastructure",
     title: "Massive Cable-Stayed Suspension Bridge",
     category: "Civil Infrastructure & BIM",
-    image: "/stadium.jpg",
+    image: "/site-plan.jpg",
     scope: [
       "Cable-stayed structural assembly",
       "Concrete pier foundation modeling",
